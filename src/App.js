@@ -25,7 +25,7 @@ const Todo = props => {
           type="checkbox"
           checked={props.todo.checked}
         />
-        <span className="title is-4">
+        <span className="title is-5">
           {" "}
           <span className="has-text-link">{props.todo.text}</span>
           <br />
@@ -34,36 +34,35 @@ const Todo = props => {
           :{props.todo.time.getMinutes()}{" "}
         </span>
       </div>
-
-      <button
-        onClick={props.onDelete}
-        className="button is-danger column is-fullwidth"
-      >
-        Borrar
-      </button>
+      <div className="column">
+        <button
+          onClick={props.onDelete}
+          className="button is-rounded is-danger is-fullwidth"
+        >
+          Borrar
+        </button>
+      </div>
     </div>
   );
 };
 const Header = props => {
   return (
     <div>
-      <section class="hero is-black is-bold has-text-centered">
+      <section class="hero is-primary has-text-centered">
         <div class="hero-body">
           <div class="container">
-            <h1 class="title is-1">Cosas por hacer</h1>
+            <h1 class="title is-3">Cosas por hacer</h1>
           </div>
         </div>
       </section>
-      <section className="columns has-background-dark has-text-centered ">
-        <div className="column">
-          <h2 className="subtitle is-3 has-text-light">
+      <section className="columns has-text-centered ">
+        <div className="column has-background-info">
+          <h2 className="subtitle is-4 has-text-white">
             Elementos: {props.elem}
           </h2>
         </div>
-        <div className="column">
-          <h2 className="subtitle is-3 has-text-light">
-            Pendientes: {props.pend}
-          </h2>
+        <div className="column has-background-warning">
+          <h2 className="subtitle is-4">Pendientes: {props.pend}</h2>
         </div>
       </section>
     </div>
@@ -131,7 +130,7 @@ class App extends React.Component {
           <div className="container">
             <div>
               <button
-                className="button is-dark is-large is-fullwidth"
+                className="button is-primary is-medium is-fullwidth"
                 onClick={() => {
                   this.newTodo();
                 }}
